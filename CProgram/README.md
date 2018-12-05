@@ -53,4 +53,8 @@ or
 (lldb) run
 ```
 
+<p align="center">
+  <img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/CProgram/Assets/lldb-run.png" width="750">
+</p>
+
 
