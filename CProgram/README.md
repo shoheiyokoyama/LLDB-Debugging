@@ -13,7 +13,7 @@ $ gcc -o hello -g hello.c
 
 ## Debug c program with LLDB
 
-### Starting lldb
+### Starting LLDB
 
 ```bash
 $ lldb hello
