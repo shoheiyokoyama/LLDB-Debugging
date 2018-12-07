@@ -69,7 +69,7 @@ The set breakpoint interrupts execution and will give us an interactive prompt t
 
 #### Step
 
-`step` or `s` executes the very next instruction and suspends again.
+`step` or `s` executes the next instruction and suspends again.
 
 ```bash
 (lldb) step
@@ -77,7 +77,7 @@ The set breakpoint interrupts execution and will give us an interactive prompt t
 
 #### Continue
 
-`continue` or `c`  execute all the instructions until it hits a next breakpoint or the process ends
+`continue` or `c`  execute all the instructions until it hits a next breakpoint or the process ends.
 
 ```bash
 (lldb) continue
