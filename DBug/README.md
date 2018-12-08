@@ -64,6 +64,11 @@ You can execute arbitrary processing at runtime by setting a breakpoint with act
 
 Click `Edit Breakpoint ...`  or double-click a breakpoint to set breakpoints in detail.
 
+<p align="center">
+  <img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/edit-breakpoint.png" width="500">
+</p>
+
+
 ### Condition
 
 
