@@ -106,8 +106,33 @@ It's possible to change the value with the following command:
 (lldb) expr currentDirection = .random
 ```
 
+## Add Action
+
+
+
 ## Breakpoint
 
-### Set breakpoint with action
+Click `Edit Breakpoint ...` to set breakpoints in detail.
+
+### Condition
+
+
+
+### Ignore
+
+You can ignore the breakpoint by the `ignore` .
+For example, if you add 2, the breakpoint is ignored twice and the breakpoint is reached the third time.
+
+### Action
+
+When the breakpoint is reached, processing is executed.
+
+### Option
+
+If `automatically continue after evaluating actions` is checked, processing will not stop at the breakpoint.
+
+
+
+
 
 
