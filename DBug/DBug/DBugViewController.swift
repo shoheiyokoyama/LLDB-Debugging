@@ -150,9 +150,25 @@ final class DBugViewController: UIViewController {
         }
     }
 
+    /// In addition to updating frame, you can add various animation processing at runtime.
+    ///
+    /// Action with Debugger command
+    ///     1. Click `Edit Breakpoint ...`  or double-click a breakpoint.
+    ///     2. Click `Add Action`
+    ///     3. Add command
+    ///         e.g.
+    ///         `expr self.button.transform  = self.button.transform.rotated(by: 90 * (.pi / 180))`
+    ///         `expr self.button.layer.cornerRadius = 50`
+    ///
+    /// - Note:
+    ///     If `automatically continue after evaluating actions` is checked,
+    ///     processing will not stop at the breakpoint.
     private func runAnimation() {
         UIView.animate(withDuration: 0.5) {
             self.button.frame = self.targetView(for: self.currentPoint).frame
+
+            /* Set a breakpoint on this line */
+
         }
     }
 }

@@ -6,60 +6,6 @@ You can configure the behavior settings when pausing in the debugger.
 
 See Preferences / Befaviors / Pauses, for more details.
 
-## The LLDB command
-
-The LLDB commands are all of the form:
-
-```
-<noun> <verb> [-options [option-value]] [argument [argument...]]
-```
-
-You can see the debugger commands with the help command.
-
-```
-(lldb) help
-Debugger commands:
-apropos           -- List debugger commands related to a word or subject.
-breakpoint        -- Commands for operating on breakpoints (see 'help b' for
-shorthand.)
-bugreport         -- Commands for creating domain-specific bug reports.
-command           -- Commands for managing custom LLDB commands.
-disassemble       -- Disassemble specified instructions in the current
-target.  Defaults to the current function for the
-current thread and stack frame.
-expression        -- Evaluate an expression on the current thread.  Displays
-any returned value with LLDB's default formatting.
-frame             -- Commands for selecting and examing the current thread's
-stack frames.
-gdb-remote        -- Connect to a process via remote GDB server.  If no host
-is specifed, localhost is assumed.
-
-...
-```
-
-Also, can see more detailed commands by adding commands and subcommand options (`help <command> <subcommand>`).
-
-```
-(lldb) help breakpoint
-Commands for operating on breakpoints (see 'help b' for shorthand.)
-
-Syntax: breakpoint <subcommand> [<command-options>]
-
-The following subcommands are supported:
-
-clear   -- Delete or disable breakpoints matching the specified source
-file and line.
-command -- Commands for adding, removing and listing LLDB commands
-executed when a breakpoint is hit.
-delete  -- Delete the specified breakpoint(s).  If no breakpoints are
-specified, delete them all.
-disable -- Disable the specified breakpoint(s) without deleting them.  If
-none are specified, disable all breakpoints.
-enable  -- Enable the specified disabled breakpoint(s). If no breakpoints
-are specified, enable all of them.
-
-...
-```
 
 # DBug
 
@@ -108,11 +54,15 @@ It's possible to change the value with the following command:
 
 ## Add Action
 
+You can execute arbitrary processing at runtime by setting a breakpoint with action.
 
+ 1. Click `Edit Breakpoint ...`  or double-click a breakpoint.
+ 2. Click `Add Action`
+ 3. Add command
 
 ## Breakpoint
 
-Click `Edit Breakpoint ...` to set breakpoints in detail.
+Click `Edit Breakpoint ...`  or double-click a breakpoint to set breakpoints in detail.
 
 ### Condition
 
@@ -131,8 +81,7 @@ When the breakpoint is reached, processing is executed.
 
 If `automatically continue after evaluating actions` is checked, processing will not stop at the breakpoint.
 
+## Requirements
 
-
-
-
-
+- Xcode 10.1
+- Swift 4.2
