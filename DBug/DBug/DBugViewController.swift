@@ -21,6 +21,27 @@ import UIKit
     (lldb) help breakpoint
     ```
 
+ ### Evaluating variable
+    - `expression` or `expr`
+        Evaluate an expression on the current thread. Displays any returned value with LLDB's default formatting.
+        Syntax: `expression <cmd-options> -- <expr>`
+
+        ```
+        (lldb) po variable
+        true
+        (lldb) expr variable = false
+        (lldb) po variable
+        false
+        ```
+
+    - `print`
+        `print` command takes no arguments, unlike the `expression` command.
+        This is an abbreviation for `expression --`.
+ 
+    - `po`
+        `po` command is an abbreviation for `expression -O  --`.
+        `expression -O  --` ( --object-description ):
+            Display using a language-specific description API, if possible.
  */
 
 final class DBugViewController: UIViewController {
@@ -79,8 +100,37 @@ final class DBugViewController: UIViewController {
         return .lightContent
     }
 
+    /// Before running the animation, you can change animation behavior by changing the value at runtime.
+    /// Let's set a breakpoint on this function and change the value.
+    ///
+    ///    1. Move point
+    ///        If you run the following command in LLDB, button will move to `Point.leftBottom`.
+    ///        ```
+    ///        (lldb) expr currentPoint = .leftBottom
+    ///        ```
+    ///
+    ///    2. Move direction
+    ///        If you change `currentDirection` using LLDB, The position that `button` moves will change.
+    ///        ```
+    ///        (lldb) expr currentDirection = .random
+    ///        ```
+    ///
+    ///    3. Update text
+    ///       After updating `currentDirection`, let's update the Label's text.
+    ///       ```
+    ///       (lldb) expr titleLabel.text = "Direction: " + currentDirection.title
+    ///       ```
+    ///
+    ///       - Note:
+    ///           In suspended state, the frame isn't updated. To update, run the following command:
+    ///               ```
+    ///               (lldb) CATransaction.flush()
+    ///               ```
     @objc private func selectButton(_ sender: UIButton) {
         currentPoint = currentPoint.next(direction: currentDirection)
+
+        /* Set a breakpoint on this line */
+
         runAnimation()
     }
 

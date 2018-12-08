@@ -37,7 +37,7 @@ is specifed, localhost is assumed.
 ...
 ```
 
-You can see more detailed commands by adding commands and subcommand options (`help <command> <subcommand>`).
+Also, can see more detailed commands by adding commands and subcommand options (`help <command> <subcommand>`).
 
 ```
 (lldb) help breakpoint
@@ -60,3 +60,54 @@ are specified, enable all of them.
 
 ...
 ```
+
+# DBug
+
+DBug is an iOS project with examples of debugs.
+
+## Evaluating variable with LLDB
+
+With the following command,  you can change the behavior at runtime.
+
+### `expression` or `expr`
+
+Evaluate an expression on the current thread. Displays any returned value with LLDB's default formatting.
+
+Syntax: `expression <cmd-options> -- <expr>`
+
+```
+(lldb) po variable
+true
+(lldb) expr variable = false
+(lldb) po variable
+false
+```
+
+### `print`
+
+`print` command takes no arguments, unlike the `expression` command.
+This is an abbreviation for `expression --`.
+
+### `po`
+
+`po` command is an abbreviation for `expression -O  --`.
+`expression -O  --` ( --object-description ): Display using a language-specific description API, if possible.
+
+### Change animation behavior
+
+The `Dbag` project is an app that button moves according to the values ​​of `currentDirection` and `currentPoint`.
+
+Before running the animation, you can change animation behavior by changing the value at runtime.
+
+It's possible to change the value with the following command:
+
+```
+(lldb) expr currentPoint = .leftBottom
+(lldb) expr currentDirection = .random
+```
+
+## Breakpoint
+
+### Set breakpoint with action
+
+
