@@ -9,7 +9,7 @@ final class DBugViewController: UIViewController {
 
     @IBOutlet private weak var titleLabel: UILabel! {
         didSet {
-            titleLabel.text = currentDirection.rawValue
+            titleLabel.text = "Direction: " + currentDirection.title
         }
     }
 
@@ -20,15 +20,16 @@ final class DBugViewController: UIViewController {
                     view.layer.cornerRadius = 10
                     view.layer.borderWidth = 2
                     view.layer.borderColor = UIColor.lightGray.cgColor
-                    view.backgroundColor = .clear
+                    view.backgroundColor = .black
             }
         }
     }
 
-    private let button: UIButton = {
-        let b = UIButton()
+    private let button: GradientButton = {
+        let b = GradientButton()
         b.frame.size = CGSize(width: 100, height: 100)
         b.layer.cornerRadius = 10
+        b.gradientView.colors = [UIColor(hex: 0xFF28A5), UIColor(hex: 0x7934CF)]
         return b
     }()
 
@@ -40,12 +41,13 @@ final class DBugViewController: UIViewController {
         }
     }
 
-    private var currentDirection = AnimationDirection.random
+    private var currentDirection = AnimationDirection.clockwise
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        button.backgroundColor = .red
+        view.backgroundColor = UIColor(hex: 0x222222)
+
         view.addSubview(button)
 
         button.addTarget(self, action: #selector(selectButton(_:)), for: .touchUpInside)
@@ -64,10 +66,13 @@ final class DBugViewController: UIViewController {
         switch point {
         case .leftTop:
             return leftTopView
+
         case .rightTop:
             return rightTopView
+
         case .rightBottom:
             return rightBottomView
+
         case .leftBottom:
             return leftBottomView
         }
@@ -102,9 +107,22 @@ private extension DBugViewController {
         }
     }
 
-    enum AnimationDirection: String {
+    enum AnimationDirection {
         case clockwise
         case anticlockwise
         case random
+
+        var title: String {
+            switch self {
+            case .clockwise:
+                return "Clockwise 🕐"
+
+            case .anticlockwise:
+                return "Anticlockwise 🕒"
+
+            case .random:
+                return "Random ♻️"
+            }
+        }
     }
 }

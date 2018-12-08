@@ -12,6 +12,8 @@
 		E04F9A9221BB8B6800CFAE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04F9A9121BB8B6800CFAE9A /* Assets.xcassets */; };
 		E04F9A9521BB8B6800CFAE9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04F9A9321BB8B6800CFAE9A /* LaunchScreen.storyboard */; };
 		E04F9A9D21BB8C4700CFAE9A /* DBugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F9A9C21BB8C4700CFAE9A /* DBugViewController.swift */; };
+		E04F9A9F21BBA0C400CFAE9A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F9A9E21BBA0C400CFAE9A /* GradientView.swift */; };
+		E04F9AA121BBA39E00CFAE9A /* UIColor+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F9AA021BBA39E00CFAE9A /* UIColor+Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E04F9A9421BB8B6800CFAE9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E04F9A9621BB8B6800CFAE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E04F9A9C21BB8C4700CFAE9A /* DBugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBugViewController.swift; sourceTree = "<group>"; };
+		E04F9A9E21BBA0C400CFAE9A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		E04F9AA021BBA39E00CFAE9A /* UIColor+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utility.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				E04F9A8A21BB8B6700CFAE9A /* AppDelegate.swift */,
 				E04F9A9C21BB8C4700CFAE9A /* DBugViewController.swift */,
+				E04F9A9E21BBA0C400CFAE9A /* GradientView.swift */,
+				E04F9AA021BBA39E00CFAE9A /* UIColor+Utility.swift */,
 				E04F9A8E21BB8B6700CFAE9A /* Main.storyboard */,
 				E04F9A9121BB8B6800CFAE9A /* Assets.xcassets */,
 				E04F9A9321BB8B6800CFAE9A /* LaunchScreen.storyboard */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04F9AA121BBA39E00CFAE9A /* UIColor+Utility.swift in Sources */,
 				E04F9A9D21BB8C4700CFAE9A /* DBugViewController.swift in Sources */,
 				E04F9A8B21BB8B6700CFAE9A /* AppDelegate.swift in Sources */,
+				E04F9A9F21BBA0C400CFAE9A /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
