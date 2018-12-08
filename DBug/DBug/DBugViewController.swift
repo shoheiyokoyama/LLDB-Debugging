@@ -1,5 +1,13 @@
 import UIKit
 
+/*:
+ # The Debugging with Xcode and LLDB
+
+ ## The Debugging settings
+    You can configure the behavior settings when pausing in the debugger.
+    See Preferences / Befaviors / Pauses, for more details.
+ */
+
 final class DBugViewController: UIViewController {
 
     @IBOutlet private weak var leftTopView: UIView!
@@ -33,13 +41,7 @@ final class DBugViewController: UIViewController {
         return b
     }()
 
-    private var currentPoint = Point.leftTop {
-        didSet {
-            UIView.animate(withDuration: 0.5) {
-                self.button.frame = self.targetView(for: self.currentPoint).frame
-            }
-        }
-    }
+    private var currentPoint = Point.leftTop
 
     private var currentDirection = AnimationDirection.clockwise
 
@@ -64,6 +66,7 @@ final class DBugViewController: UIViewController {
 
     @objc private func selectButton(_ sender: UIButton) {
         currentPoint = currentPoint.next(direction: currentDirection)
+        runAnimation()
     }
 
     private func targetView(for point: Point) -> UIView {
@@ -81,9 +84,15 @@ final class DBugViewController: UIViewController {
             return leftBottomView
         }
     }
+
+    private func runAnimation() {
+        UIView.animate(withDuration: 0.5) {
+            self.button.frame = self.targetView(for: self.currentPoint).frame
+        }
+    }
 }
 
-private extension DBugViewController {
+extension DBugViewController {
     enum Point: Int, CaseIterable {
         case leftTop
         case rightTop
