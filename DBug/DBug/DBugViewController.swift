@@ -6,6 +6,21 @@ import UIKit
  ## The Debugging settings
     You can configure the behavior settings when pausing in the debugger.
     See Preferences / Befaviors / Pauses, for more details.
+
+ ## The LLDB command
+    The LLDB commands are all of the form:
+
+    ```
+    <noun> <verb> [-options [option-value]] [argument [argument...]]
+    ```
+
+    You can see the debugger commands with the help command.
+
+    ```
+    (lldb) help
+    (lldb) help breakpoint
+    ```
+
  */
 
 final class DBugViewController: UIViewController {
