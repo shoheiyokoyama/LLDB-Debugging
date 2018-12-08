@@ -58,6 +58,10 @@ final class DBugViewController: UIViewController {
         button.frame = targetView(for: currentPoint).frame
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     @objc private func selectButton(_ sender: UIButton) {
         currentPoint = currentPoint.next(direction: currentDirection)
     }
