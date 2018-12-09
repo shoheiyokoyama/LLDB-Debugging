@@ -1,5 +1,15 @@
 # LLDB Debugging
 
+<img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/Assets/DragonFull.png" width="300" align="left">
+
+# The LLDB Debugger
+
+The LLDB Debugger (LLDB) is an open-source software debugger that is a next generation, high-performance. It features a REPL, along with C++ and Python plugins.
+
+A debugger allows you to pause a program at a specific moment of its execution, inspect the values of variables, execute custom instructions, and then manipulate the advancement of the program as you see fit. 
+
+LLDB is the default debugger in Xcode on Mac OS X and supports debugging C, Objective-C and C++ on the desktop and iOS devices and simulator.
+
 # Contents
 
 - [The LLDB Debugging in C program](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/CProgram#the-lldb-debugging-in-c-program)
@@ -70,6 +80,7 @@ There are more command sample at [GDB TO LLDB COMMAND MAP](https://lldb.llvm.org
 - [The LLDB Debugger](https://lldb.llvm.org/index.html)
 - [LLDB Quick Start Guide](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/Introduction.html#//apple_ref/doc/uid/TP40012917-CH1-SW1)
 - [Advanced Debugging with Xcode and LLDB](https://developer.apple.com/videos/play/wwdc2018/412/)
+- [Dancing in the Debugger — A Waltz with LLDB](https://www.objc.io/issues/19-debugging/lldb-debugging/#lldb)
 
 ## <a name="author"> Author
 
