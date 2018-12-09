@@ -16,6 +16,7 @@ LLDB is the default debugger in Xcode on Mac OS X and supports debugging C, Obje
 - [The Debugging with Xcode and LLDB](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug#the-debugging-with-xcode-and-lldb)
 - [The LLDB command](#lldb-command)
 - [Config file](#config-file)
+- [Custom LLDB command using python](#custom-lldb-command-ussing-python)
 - [References](#references)
 - [Platform support](#platform-support)
 - [Author](#author)
@@ -83,6 +84,45 @@ There are more command sample at [GDB TO LLDB COMMAND MAP](https://lldb.llvm.org
 `~/.lldbinit` is loaded when CLI is started. (for Xcode, `~/.lldbinit-Xcode` is loaded)
 
 It's useful to set module import and alias settings in this file.
+
+- alias: `command alias b breakpoint`
+- unalias: `command unalias b`
+- file import: `command script import path/xxx.py`
+
+##  <a name="custom-lldb-command-ussing-python"> Custom LLDB command using python
+
+You can create new commands by using python function.
+
+To write a python function that implements a new LLDB command define the function to take four arguments as follows:
+
+```python
+def command_function(debugger, command, result, internal_dict):
+    # Your code goes here
+```
+
+The below function will get run when the module is loaded allowing you to add whatever commands you want into the current debugger. 
+
+```python
+def __lldb_init_module(debugger, internal_dict):
+    # Command Initialization code goes here
+```
+
+> NOTE: this function will only be run when using the LLDB command command script import, it will not get run if anyone imports your module from another module. 
+
+Add the following script, to add a new command.
+
+```
+command script add -f filename.function_name command_name
+```
+
+| Argument | Type | Description |
+|---|---|---|
+| debugger | lldb.SBDebugger | The current debugger object |
+| command | python string | A python string containing all arguments for your command. If you need to chop up the arguments try using the shlex module's shlex.split(command) to properly extract the arguments. |
+| result | lldb.SBCommandReturnObject | A return object which encapsulates success/failure information for the command and output text that needs to be printed as a result of the command. The plain Python "print" command also works but text won't go in the result by default (it is useful as a temporary logging facility). |
+| internal_dict | python dict object | The dictionary for the current embedded script session which contains all variables and functions. |
+
+See [LLDB Python Reference](https://lldb.llvm.org/python-reference.html) for more information.
 
 ## <a name="platform-support"> Platform support
 
