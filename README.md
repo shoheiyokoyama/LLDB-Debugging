@@ -141,6 +141,8 @@ See [LLDB Python Reference](https://lldb.llvm.org/python-reference.html) for mor
 - [Dancing in the Debugger — A Waltz with LLDB](https://www.objc.io/issues/19-debugging/lldb-debugging/#lldb)
 - [lldb Python classes reference guide](https://lldb.llvm.org/python_reference/index.html)
 - [facebook/chisel](https://github.com/facebook/chisel)
+- [apple/swift-lldb](https://github.com/apple/swift-lldb)
+- [REPL and Debugger](https://swift.org/lldb/#why-combine-the-repl-and-debugger)
 
 ## <a name="author"> Author
 
