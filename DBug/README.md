@@ -75,7 +75,9 @@ Moving a breakpoint will skip the process.
 
 This magic poses a risk of crashing. so be careful about handling uninitialized instances etc.
 
-
+<p align="center">
+  <img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/jump.gif" width="700">
+</p>
 
 ## Breakpoint
 
