@@ -45,6 +45,31 @@ import UIKit
         `po` command is an abbreviation for `expression -O  --`.
         `expression -O  --` ( --object-description ):
             Display using a language-specific description API, if possible.
+
+ ### Update UIKit
+
+    It's possible to update the UI state at runtime.
+    For example, background color, text, constraints.
+
+        ```
+        (lldb) expr label.text = "Direction: " + currentDirection.title
+        ```
+
+    - Note:
+        In suspended state, the frame isn't updated. To update, run the following command:
+
+            ```
+            (lldb) expr CATransaction.flush()
+            ```
+
+        Flush is typically called automatically at the end of the current runloop, regardless of the runloop mode.
+
+    - SeeAlso: [CATransaction / flush()](https://developer.apple.com/documentation/quartzcore/catransaction/1448270-flush)
+
+ ### Symbolic Breakpoint
+
+    Using the symbolic breakpoints. you can set a breakpoint based on a symbol, like a method or function name, regardless of where that name might appear in the code.
+    You can set up a symbolic breakpoint for `-[UILabel setText:]` and it will be triggered any time that method is called.
  */
 
 final class DBugViewController: UIViewController {
@@ -54,9 +79,39 @@ final class DBugViewController: UIViewController {
     @IBOutlet private weak var leftBottomView: UIView!
     @IBOutlet private weak var rightBottomView: UIView!
 
-    @IBOutlet private weak var titleLabel: UILabel! {
+    /// Symbolic breakpoint for UILabel
+    /// You can set up a symbolic breakpoint for `-[UILabel setText:]` and it will be triggered any time that method is called.
+    /// Click the + button in the lower-left toolbar within the Breakpoint Navigator and choose `Add Symbolic Breakpoint…`.
+    /// Add `-[UILabel setText:]` in Symbol or the the following command in LLDB:
+    ///
+    ///     ```
+    ///     (lldb) breakpoint set --name "-[UILabel setText:]"
+    ///     ```
+    ///
+    /// Arguments
+    ///
+    ///     In this state, you can see the arguments passed to the function.
+    ///
+    ///         ```
+    ///         (lldb) po $arg1
+    ///          <UILabel: 0x7fb1ae405cd0; frame = (0 0; 275 50); text = 'Direction: Clockwise 🕐'; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x600000292ad0>>
+    ///
+    ///         (lldb) po (SEL)$arg2
+    ///          "setText:"
+    ///
+    ///         (lldb) po $arg3
+    ///         Direction: Clockwise 🕐
+    ///         ```
+
+    @IBOutlet private weak var directionLabel: UILabel! {
         didSet {
-            titleLabel.text = "Direction: " + currentDirection.title
+            directionLabel.text = "Direction: " + currentDirection.title
+        }
+    }
+
+    @IBOutlet private weak var positionLabel: UILabel! {
+        didSet {
+            positionLabel.text = "Position: " + currentPoint.title
         }
     }
 
@@ -77,6 +132,7 @@ final class DBugViewController: UIViewController {
         b.frame.size = CGSize(width: 100, height: 100)
         b.layer.cornerRadius = 10
         b.gradientView.colors = [UIColor(hex: 0xFF28A5), UIColor(hex: 0x7934CF)]
+        b.addTarget(self, action: #selector(selectButton(_:)), for: .touchUpInside)
         return b
     }()
 
@@ -90,8 +146,6 @@ final class DBugViewController: UIViewController {
         view.backgroundColor = UIColor(hex: 0x222222)
 
         view.addSubview(button)
-
-        button.addTarget(self, action: #selector(selectButton(_:)), for: .touchUpInside)
     }
 
     override func viewDidLayoutSubviews() {
@@ -106,7 +160,7 @@ final class DBugViewController: UIViewController {
     /// Before running the animation, you can change animation behavior by changing the value at runtime.
     /// Let's set a breakpoint on this function and change the value.
     ///
-    ///    1. Move point
+    ///    * Move point
     ///
     ///        If you run the following command in LLDB, button will move to `Point.leftBottom`.
     ///
@@ -114,34 +168,20 @@ final class DBugViewController: UIViewController {
     ///        (lldb) expr currentPoint = .leftBottom
     ///        ```
     ///
-    ///    2. Move direction
+    ///    * Move direction
     ///
     ///        If you change `currentDirection` using LLDB, The position that `button` moves will change.
     ///
     ///        ```
     ///        (lldb) expr currentDirection = .random
     ///        ```
-    ///
-    ///    3. Update text
-    ///
-    ///       After updating `currentDirection`, let's update the Label's text.
-    ///
-    ///       ```
-    ///       (lldb) expr titleLabel.text = "Direction: " + currentDirection.title
-    ///       ```
-    ///
-    ///       - Note:
-    ///           In suspended state, the frame isn't updated. To update, run the following command:
-    ///
-    ///               ```
-    ///               (lldb) CATransaction.flush()
-    ///               ```
     @objc private func selectButton(_ sender: UIButton) {
         currentPoint = currentPoint.next(direction: currentDirection)
 
         /* Set a breakpoint on this line */
 
         runAnimation()
+        updateText()
     }
 
     private func targetView(for point: Point) -> UIView {
@@ -183,6 +223,11 @@ final class DBugViewController: UIViewController {
 
         }
     }
+
+    private func updateText() {
+        directionLabel.text = "Direction: " + currentDirection.title
+        positionLabel.text = "Position: " + currentPoint.title
+    }
 }
 
 extension DBugViewController {
@@ -211,6 +256,22 @@ extension DBugViewController {
                     }
                 }
                 return .leftTop
+            }
+        }
+
+        var title: String {
+            switch self {
+            case .leftTop:
+                return "↖️"
+
+            case .rightTop:
+                return "↗️"
+
+            case .rightBottom:
+                return "↘️"
+
+            case .leftBottom:
+                return "↙️"
             }
         }
     }

@@ -6,10 +6,27 @@ You can configure the behavior settings when pausing in the debugger.
 
 See Preferences / Befaviors / Pauses, for more details.
 
-
 # DBug
 
 [DBag](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug/DBug) is an iOS project with examples of debugs.
+
+## Update UIKit
+
+It's possible to update the UI state at runtime.
+For example, background color, text, constraints.
+
+```
+(lldb) expr label.text = "foo"
+```
+
+In suspended state, the frame isn't updated. To update, run the following command:
+
+```
+(lldb) expr CATransaction.flush()
+```
+
+[Flush](https://developer.apple.com/documentation/quartzcore/catransaction/1448270-flush) is typically called automatically at the end of the current runloop, regardless of the runloop mode.
+
 
 ## Evaluating variable with LLDB
 
@@ -76,6 +93,7 @@ Click `Edit Breakpoint ...`  or double-click a breakpoint to set breakpoints in 
 ### Ignore
 
 You can ignore the breakpoint by the `ignore` .
+
 For example, if you add 2, the breakpoint is ignored twice and the breakpoint is reached the third time.
 
 ### Action
@@ -91,6 +109,42 @@ expr variable = false
 ### Option
 
 If `automatically continue after evaluating actions` is checked, processing will not stop at the breakpoint.
+
+## Symbolic Breakpoint
+
+Using the symbolic breakpoints. you can set a breakpoint based on a symbol, like a method or function name, regardless of where that name might appear in the code.
+
+You can set up a symbolic breakpoint for `-[UILabel setText:]` and it will be triggered any time that method is called. 
+
+e.g.
+
+- `-[UILabel setText:]`
+- `-[UIApplication main]`
+- `-[UIViewController viewDidLoad]`
+
+To create a symbolic breakpoint in Xcode, click the + button in the lower-left toolbar within the Breakpoint Navigator and choose “Add Symbolic Breakpoint…”
+
+Next, Add `-[UILabel setText:]` in Symbol or the the following command in LLDB:
+
+```
+(lldb) breakpoint set --name "-[UILabel setText:]"
+```
+
+// image
+
+In this state, you can see the arguments passed to the function.
+
+```
+(lldb) po $arg1
+<UILabel: 0x7fb1ae405cd0; frame = (0 0; 275 50); text = 'Direction: Clockwise 🕐'; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x600000292ad0>>
+
+(lldb) po (SEL)$arg2
+"setText:"
+
+(lldb) po $arg3
+Direction: Clockwise 🕐
+```
+
 
 ## Requirements
 
