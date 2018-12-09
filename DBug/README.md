@@ -36,7 +36,20 @@ This is an abbreviation for `expression --`.
 ### `po`
 
 `po` command is an abbreviation for `expression -O  --`.
+
 `expression -O  --` ( --object-description ): Display using a language-specific description API, if possible.
+
+For Swift, `CustomDebugStringConvertible.debugDescription` is output.
+
+```swift
+extension AValue: CustomDebugStringConvertible {
+    var debugDescription: String {
+        return "AValue's value = \(value)"
+    }
+}
+```
+
+See [CustomDebugStringConvertible](https://developer.apple.com/documentation/swift/customdebugstringconvertible)
 
 ### Change animation behavior
 
