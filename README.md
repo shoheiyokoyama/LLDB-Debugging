@@ -80,7 +80,7 @@ There are more command sample at [GDB TO LLDB COMMAND MAP](https://lldb.llvm.org
 
 ## <a name="config-file"> Config file
 
-`~ /.lldbinit` is loaded when CLI is started. (for Xcode, `~/.lldbinit-Xcode` is loaded)
+`~/.lldbinit` is loaded when CLI is started. (for Xcode, `~/.lldbinit-Xcode` is loaded)
 
 It's useful to set module import and alias settings in this file.
 
