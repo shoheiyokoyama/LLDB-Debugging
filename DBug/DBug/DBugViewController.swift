@@ -58,7 +58,7 @@ import UIKit
     If using memory address:
 
         ```
-        (lldb) unsafeBitCast(0x7ff469d152f0, to: UIView.self).frame.origin.y = 200
+        (lldb) expr unsafeBitCast(0x7ff469d152f0, to: UIView.self).frame.origin.y = 200
         ```
 
     - Note:

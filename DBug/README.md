@@ -114,6 +114,12 @@ This magic poses a risk of crashing. so be careful about handling uninitialized 
   <img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/jump.gif" width="700">
 </p>
 
+or
+
+```
+(lldb) thread jump --by 1
+```
+
 ## Output view hierarchy
 
 ```
@@ -131,7 +137,11 @@ Click `Edit Breakpoint ...`  or double-click a breakpoint to set breakpoints in 
 
 ### Condition
 
+Processing will be paused only if the condition is fullfilled.
 
+```
+val == true
+```
 
 ### Ignore
 
