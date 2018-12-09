@@ -130,7 +130,10 @@ Next, Add `-[UILabel setText:]` in Symbol or the the following command in LLDB:
 (lldb) breakpoint set --name "-[UILabel setText:]"
 ```
 
-// image
+<p align="center">
+  <img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/label-symbolic-breakpoint.png" width="700">
+</p>
+
 
 In this state, you can see the arguments passed to the function.
 
