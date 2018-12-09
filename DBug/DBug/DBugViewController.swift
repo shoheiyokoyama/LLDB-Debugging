@@ -181,6 +181,7 @@ final class DBugViewController: UIViewController {
         /* Set a breakpoint on this line */
 
         runAnimation()
+
         updateText()
     }
 

@@ -69,6 +69,14 @@ In suspended state, the frame isn't updated. To update, run the following comman
 [Flush](https://developer.apple.com/documentation/quartzcore/catransaction/1448270-flush) is typically called automatically at the end of the current runloop, regardless of the runloop mode.
 
 
+## Process skip
+
+Moving a breakpoint will skip the process.
+
+This magic poses a risk of crashing. so be careful about handling uninitialized instances etc.
+
+
+
 ## Breakpoint
 
 Click `Edit Breakpoint ...`  or double-click a breakpoint to set breakpoints in detail.
