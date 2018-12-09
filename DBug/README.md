@@ -4,6 +4,9 @@
 
 # DBug
 
+![Swift](https://img.shields.io/badge/swift-4.2-orange.svg)
+![Xcode](https://img.shields.io/badge/Xcode-10.1-blue.svg)
+
 [DBag](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug/DBug) is an iOS project for LLDB debugging. You can change the behavior in runtime using the LLDB command.
 
 # Contents
@@ -16,7 +19,7 @@
 - [Breakpoint](#breakpoint)
 - [Symbolic Breakpoint](#symbolic-breakpoint)
 - [The Debugging with python](#the-debugging-with-python)
-- [requirements](#requirements)
+- [Requirements](#requirements)
 
 ## <a name="the-debugging-settings"> The Debugging settings
 
