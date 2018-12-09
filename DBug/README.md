@@ -73,7 +73,13 @@ For example, background color, text, constraints.
 (lldb) expr label.text = "foo"
 ```
 
-In suspended state, the frame isn't updated. To update, run the following command:
+If using memory address:
+
+```
+(lldb) unsafeBitCast(0x7ff469d152f0, to: UIView.self).frame.origin.y = 200
+```
+
+In suspended state, the frame buffer isn't updated. To update, run the following command:
 
 ```
 (lldb) expr CATransaction.flush()
@@ -81,6 +87,22 @@ In suspended state, the frame isn't updated. To update, run the following comman
 
 [Flush](https://developer.apple.com/documentation/quartzcore/catransaction/1448270-flush) is typically called automatically at the end of the current runloop, regardless of the runloop mode.
 
+## Watch specific variable
+
+You can watch specific variable and stop processing on change.
+While pausing with breakpoint, select `watch var_name` in [Variable View] area or run the following command:
+
+```
+(lldb) watch set variable var_name
+```
+
+The following result is output in the console area.
+
+```
+Watchpoint 1 hit:
+old value: foo
+new value: bar
+```
 
 ## Process skip
 
@@ -91,6 +113,12 @@ This magic poses a risk of crashing. so be careful about handling uninitialized 
 <p align="center">
   <img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/jump.gif" width="700">
 </p>
+
+## Output view hierarchy
+
+```
+(lldb) expr -l objc -O -- [`self.view` recursiveDescription]
+```
 
 ## Breakpoint
 
