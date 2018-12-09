@@ -1,0 +1,3 @@
+#command alias xxx  <noun> <verb> [-options-value]
+#command script import ~path/~.py
+

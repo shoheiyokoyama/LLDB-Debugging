@@ -15,6 +15,7 @@ LLDB is the default debugger in Xcode on Mac OS X and supports debugging C, Obje
 - [The LLDB Debugging in C program](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/CProgram#the-lldb-debugging-in-c-program)
 - [The Debugging with Xcode and LLDB](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug#the-debugging-with-xcode-and-lldb)
 - [The LLDB command](#lldb-command)
+- [Config file](#config-file)
 - [References](#references)
 - [Platform support](#platform-support)
 - [Author](#author)
@@ -76,6 +77,12 @@ are specified, enable all of them.
 ```
 
 There are more command sample at [GDB TO LLDB COMMAND MAP](https://lldb.llvm.org/lldb-gdb.html)
+
+## <a name="config-file"> Config file
+
+`~ /.lldbinit` is loaded when CLI is started. (for Xcode, `~/.lldbinit-Xcode` is loaded)
+
+It's useful to set module import and alias settings in this file.
 
 ## <a name="platform-support"> Platform support
 
