@@ -16,7 +16,9 @@ LLDB is the default debugger in Xcode on Mac OS X and supports debugging C, Obje
 - [The Debugging with Xcode and LLDB](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug#the-debugging-with-xcode-and-lldb)
 - [The LLDB command](#lldb-command)
 - [References](#references)
+- [Platform support](#platform-support)
 - [Author](#author)
+
 
 ## <a name="lldb-command"> The LLDB command
 
@@ -74,6 +76,15 @@ are specified, enable all of them.
 ```
 
 There are more command sample at [GDB TO LLDB COMMAND MAP](https://lldb.llvm.org/lldb-gdb.html)
+
+## <a name="platform-support"> Platform support
+
+- Mac OS X desktop user space debugging for i386 and x86-64
+- iOS simulator debugging on i386
+- iOS device debugging on ARM
+- Linux local user-space debugging for i386, x86-64 and PPC64le
+- FreeBSD local user-space debugging for i386 and x86-64
+- Windows local user-space debugging for i386 (*)
 
 ## <a name="references"> References
 
