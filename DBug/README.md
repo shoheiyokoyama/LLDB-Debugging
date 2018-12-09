@@ -1,6 +1,6 @@
 # The Debugging with Xcode and LLDB
 
-<img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/DBug.gif" width="200" align="right">
+<img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/DBug.gif" width="250" align="right">
 
 # DBug
 
