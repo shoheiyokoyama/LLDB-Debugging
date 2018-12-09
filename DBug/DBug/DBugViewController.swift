@@ -160,7 +160,7 @@ final class DBugViewController: UIViewController {
         let b = GradientButton()
         b.frame.size = CGSize(width: 100, height: 100)
         b.layer.cornerRadius = 10
-        b.gradientView.colors = [UIColor(hex: 0xFF28A5), UIColor(hex: 0x7934CF)]
+        b.gradientColors = [UIColor(hex: 0xFF28A5), UIColor(hex: 0x7934CF)]
         b.addTarget(self, action: #selector(selectButton(_:)), for: .touchUpInside)
         return b
     }()
@@ -246,7 +246,7 @@ final class DBugViewController: UIViewController {
     ///     If `automatically continue after evaluating actions` is checked,
     ///     processing will not stop at the breakpoint.
     private func runAnimation() {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.button.frame = self.targetView(for: self.currentPoint).frame
 
             /* Set a breakpoint on this line */
