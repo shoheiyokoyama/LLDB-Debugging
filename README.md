@@ -139,6 +139,8 @@ See [LLDB Python Reference](https://lldb.llvm.org/python-reference.html) for mor
 - [LLDB Quick Start Guide](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/Introduction.html#//apple_ref/doc/uid/TP40012917-CH1-SW1)
 - [Advanced Debugging with Xcode and LLDB](https://developer.apple.com/videos/play/wwdc2018/412/)
 - [Dancing in the Debugger — A Waltz with LLDB](https://www.objc.io/issues/19-debugging/lldb-debugging/#lldb)
+- [lldb Python classes reference guide](https://lldb.llvm.org/python_reference/index.html)
+- [facebook/chisel](https://github.com/facebook/chisel)
 
 ## <a name="author"> Author
 

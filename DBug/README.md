@@ -201,6 +201,30 @@ In this state, you can see the arguments passed to the function.
 Direction: Clockwise 🕐
 ```
 
+## The Debugging with python
+
+The entire LLDB API is available as Python functions through a script bridging interface. You can use LLDB commands customized with Python with Xcode.
+
+[Chisel](https://github.com/facebook/chisel) that facebook is developing is very useful OSS and has strong support for iOS debugging. It's a collection of LLDB commands to assist in the debugging of iOS apps.
+
+### Command
+
+- `pviews`: Print the recursive view description for the key window.
+- `pvc`: Print the recursive view controller description for the key window.
+- `show/hide`: Show or hide the given view or layer. You don't even have to continue the process to see the changes!
+- And More...
+
+To see the list of all of the commands execute the help command in LLDB or go to the [Wiki](https://github.com/facebook/chisel/wiki).
+
+```
+(lldb) help
+The following is a list of built-in, permanent debugger commands:
+...
+
+The following is a list of your current user-defined commands:
+...
+```
+
 ## Requirements
 
 - Xcode 10.1
