@@ -2,7 +2,10 @@
 
 # Contents
 
+- [The LLDB Debugging in C program](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/CProgram#the-lldb-debugging-in-c-program)
+- [The Debugging with Xcode and LLDB](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug#the-debugging-with-xcode-and-lldb)
 - [The LLDB command](#lldb-command)
+- [References](#references)
 - [Author](#author)
 
 ## <a name="lldb-command"> The LLDB command
@@ -59,6 +62,14 @@ are specified, enable all of them.
 
 ...
 ```
+
+There are more command sample at [GDB TO LLDB COMMAND MAP](https://lldb.llvm.org/lldb-gdb.html)
+
+## <a name="references"> References
+
+- [The LLDB Debugger](https://lldb.llvm.org/index.html)
+- [LLDB Quick Start Guide](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/Introduction.html#//apple_ref/doc/uid/TP40012917-CH1-SW1)
+- [Advanced Debugging with Xcode and LLDB](https://developer.apple.com/videos/play/wwdc2018/412/)
 
 ## <a name="author"> Author
 

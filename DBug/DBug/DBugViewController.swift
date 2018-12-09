@@ -4,10 +4,12 @@ import UIKit
  # The Debugging with Xcode and LLDB
 
  ## The Debugging settings
+
     You can configure the behavior settings when pausing in the debugger.
     See Preferences / Befaviors / Pauses, for more details.
 
  ## The LLDB command
+
     The LLDB commands are all of the form:
 
     ```
@@ -22,6 +24,7 @@ import UIKit
     ```
 
  ### Evaluating variable
+
     - `expression` or `expr`
         Evaluate an expression on the current thread. Displays any returned value with LLDB's default formatting.
         Syntax: `expression <cmd-options> -- <expr>`
@@ -104,25 +107,32 @@ final class DBugViewController: UIViewController {
     /// Let's set a breakpoint on this function and change the value.
     ///
     ///    1. Move point
+    ///
     ///        If you run the following command in LLDB, button will move to `Point.leftBottom`.
+    ///
     ///        ```
     ///        (lldb) expr currentPoint = .leftBottom
     ///        ```
     ///
     ///    2. Move direction
+    ///
     ///        If you change `currentDirection` using LLDB, The position that `button` moves will change.
+    ///
     ///        ```
     ///        (lldb) expr currentDirection = .random
     ///        ```
     ///
     ///    3. Update text
+    ///
     ///       After updating `currentDirection`, let's update the Label's text.
+    ///
     ///       ```
     ///       (lldb) expr titleLabel.text = "Direction: " + currentDirection.title
     ///       ```
     ///
     ///       - Note:
     ///           In suspended state, the frame isn't updated. To update, run the following command:
+    ///
     ///               ```
     ///               (lldb) CATransaction.flush()
     ///               ```
@@ -153,9 +163,11 @@ final class DBugViewController: UIViewController {
     /// In addition to updating frame, you can add various animation processing at runtime.
     ///
     /// Action with Debugger command
-    ///     1. Click `Edit Breakpoint ...`  or double-click a breakpoint.
+    ///
+    ///     1. Click `Edit Breakpoint ...` or double-click a breakpoint.
     ///     2. Click `Add Action`
     ///     3. Add command
+    ///
     ///         e.g.
     ///         `expr self.button.transform  = self.button.transform.rotated(by: 90 * (.pi / 180))`
     ///         `expr self.button.layer.cornerRadius = 50`
@@ -174,6 +186,8 @@ final class DBugViewController: UIViewController {
 }
 
 extension DBugViewController {
+
+    /// Point where the button moves
     enum Point: Int, CaseIterable {
         case leftTop
         case rightTop
@@ -201,6 +215,7 @@ extension DBugViewController {
         }
     }
 
+    /// Direction in which the button moves
     enum AnimationDirection {
         case clockwise
         case anticlockwise

@@ -9,7 +9,7 @@ See Preferences / Befaviors / Pauses, for more details.
 
 # DBug
 
-DBug is an iOS project with examples of debugs.
+[DBag](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug/DBug) is an iOS project with examples of debugs.
 
 ## Evaluating variable with LLDB
 
@@ -41,7 +41,7 @@ This is an abbreviation for `expression --`.
 
 ### Change animation behavior
 
-The `Dbag` project is an app that button moves according to the values ​​of `currentDirection` and `currentPoint`.
+The [DBag](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug/DBug) project is an app that button moves according to the values ​​of `currentDirection` and `currentPoint`.
 
 Before running the animation, you can change animation behavior by changing the value at runtime.
 
@@ -76,6 +76,12 @@ For example, if you add 2, the breakpoint is ignored twice and the breakpoint is
 ### Action
 
 When the breakpoint is reached, processing is executed.
+
+e.g.
+
+```
+expr variable = false
+```
 
 ### Option
 
