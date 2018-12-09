@@ -10,24 +10,6 @@ See Preferences / Befaviors / Pauses, for more details.
 
 [DBag](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug/DBug) is an iOS project with examples of debugs.
 
-## Update UIKit
-
-It's possible to update the UI state at runtime.
-For example, background color, text, constraints.
-
-```
-(lldb) expr label.text = "foo"
-```
-
-In suspended state, the frame isn't updated. To update, run the following command:
-
-```
-(lldb) expr CATransaction.flush()
-```
-
-[Flush](https://developer.apple.com/documentation/quartzcore/catransaction/1448270-flush) is typically called automatically at the end of the current runloop, regardless of the runloop mode.
-
-
 ## Evaluating variable with LLDB
 
 With the following command,  you can change the behavior at runtime.
@@ -69,13 +51,23 @@ It's possible to change the value with the following command:
 (lldb) expr currentDirection = .random
 ```
 
-## Add Action
+### Update UIKit
 
-You can execute arbitrary processing at runtime by setting a breakpoint with action.
+It's possible to update the UI state at runtime.
+For example, background color, text, constraints.
 
- 1. Click `Edit Breakpoint ...`  or double-click a breakpoint.
- 2. Click `Add Action`
- 3. Add command
+```
+(lldb) expr label.text = "foo"
+```
+
+In suspended state, the frame isn't updated. To update, run the following command:
+
+```
+(lldb) expr CATransaction.flush()
+```
+
+[Flush](https://developer.apple.com/documentation/quartzcore/catransaction/1448270-flush) is typically called automatically at the end of the current runloop, regardless of the runloop mode.
+
 
 ## Breakpoint
 
@@ -144,7 +136,6 @@ In this state, you can see the arguments passed to the function.
 (lldb) po $arg3
 Direction: Clockwise 🕐
 ```
-
 
 ## Requirements
 
