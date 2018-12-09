@@ -1,16 +1,30 @@
 # The Debugging with Xcode and LLDB
 
-## The Debugging settings
+<img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/DBug.gif" width="200" align="right">
+
+# DBug
+
+[DBag](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug/DBug) is an iOS project for LLDB debugging. You can change the behavior in runtime using the LLDB command.
+
+# Contents
+
+- [The Debugging settings](#the-debugging-settings)
+- [Evaluating variable with LLDB](#evaluating-variable-with-lldb)
+- [Watch specific variable](#watch-specific-variable)
+- [Process skip](#process-skip)
+- [Output view hierarchy](#output-view-hierarchy)
+- [Breakpoint](#breakpoint)
+- [Symbolic Breakpoint](#symbolic-breakpoint)
+- [The Debugging with python](#the-debugging-with-python)
+- [requirements](#requirements)
+
+## <a name="the-debugging-settings"> The Debugging settings
 
 You can configure the behavior settings when pausing in the debugger.
 
 See Preferences / Befaviors / Pauses, for more details.
 
-# DBug
-
-[DBag](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug/DBug) is an iOS project with examples of debugs.
-
-## Evaluating variable with LLDB
+## <a name="evaluating-variable-with-lldb"> Evaluating variable with LLDB
 
 With the following command,  you can change the behavior at runtime.
 
@@ -87,7 +101,7 @@ In suspended state, the frame buffer isn't updated. To update, run the following
 
 [Flush](https://developer.apple.com/documentation/quartzcore/catransaction/1448270-flush) is typically called automatically at the end of the current runloop, regardless of the runloop mode.
 
-## Watch specific variable
+## <a name="watch-specific-variable"> Watch specific variable
 
 You can watch specific variable and stop processing on change.
 While pausing with breakpoint, select `watch var_name` in [Variable View] area or run the following command:
@@ -104,7 +118,7 @@ old value: foo
 new value: bar
 ```
 
-## Process skip
+## <a name="process-skip"> Process skip
 
 Moving a breakpoint will skip the process.
 
@@ -120,13 +134,13 @@ or
 (lldb) thread jump --by 1
 ```
 
-## Output view hierarchy
+## <a name="output-view-hierarchy"> Output view hierarchy
 
 ```
 (lldb) expr -l objc -O -- [`self.view` recursiveDescription]
 ```
 
-## Breakpoint
+## <a name="breakpoint"> Breakpoint
 
 Click `Edit Breakpoint ...`  or double-click a breakpoint to set breakpoints in detail.
 
@@ -163,7 +177,7 @@ expr variable = false
 
 If `automatically continue after evaluating actions` is checked, processing will not stop at the breakpoint.
 
-## Symbolic Breakpoint
+## <a name="symbolic-breakpoint"> Symbolic Breakpoint
 
 Using the symbolic breakpoints. you can set a breakpoint based on a symbol, like a method or function name, regardless of where that name might appear in the code.
 
@@ -201,7 +215,7 @@ In this state, you can see the arguments passed to the function.
 Direction: Clockwise 🕐
 ```
 
-## The Debugging with python
+## <a name="the-debugging-with-python"> The Debugging with python
 
 <p align="center">
   <img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/chisel-sample.gif" width="800">
@@ -230,7 +244,7 @@ The following is a list of your current user-defined commands:
 ...
 ```
 
-## Requirements
+## <a name="requirements"> Requirements
 
 - Xcode 10.1
 - Swift 4.2
