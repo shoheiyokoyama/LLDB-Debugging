@@ -203,6 +203,11 @@ Direction: Clockwise 🕐
 
 ## The Debugging with python
 
+<p align="center">
+  <img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/chisel-sample.gif" width="800">
+</p>
+
+
 The entire LLDB API is available as Python functions through a script bridging interface. You can use LLDB commands customized with Python with Xcode.
 
 [Chisel](https://github.com/facebook/chisel) that facebook is developing is very useful OSS and has strong support for iOS debugging. It's a collection of LLDB commands to assist in the debugging of iOS apps.
