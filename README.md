@@ -145,6 +145,7 @@ See [LLDB Python Reference](https://lldb.llvm.org/python-reference.html) for mor
 - [facebook/chisel](https://github.com/facebook/chisel)
 - [apple/swift-lldb](https://github.com/apple/swift-lldb)
 - [REPL and Debugger](https://swift.org/lldb/)
+- [Introduction to the Swift REPL](https://developer.apple.com/swift/blog/?id=18)
 
 ## <a name="author"> Author
 
