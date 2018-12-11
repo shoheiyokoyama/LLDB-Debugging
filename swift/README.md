@@ -51,6 +51,8 @@ Hello Swift REPL
 
 for LLDB Debugging:
 
+When execution stops at a breakpoint the full feature set of the debugger is immediately available.
+
 ```
 xcrun swiftc -g hello.swift
 
