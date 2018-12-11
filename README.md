@@ -18,7 +18,7 @@ LLDB is the default debugger in Xcode on Mac OS X and supports debugging C, Obje
 - [The LLDB Debugger](#the-lldb-debugger)
   - [The LLDB command](#lldb-command)
   - [Config file](#config-file)
-  - [Custom LLDB command using python](#custom-lldb-command-ussing-python)
+  - [Custom LLDB command using Python](#custom-lldb-command-ussing-python)
   - [References](#references)
   - [Platform support](#platform-support)
   - [Author](#author)
@@ -91,7 +91,7 @@ It's useful to set module import and alias settings in this file.
 - unalias: `command unalias b`
 - file import: `command script import path/xxx.py`
 
-##  <a name="custom-lldb-command-ussing-python"> Custom LLDB command using python
+##  <a name="custom-lldb-command-ussing-python"> Custom LLDB command using Python
 
 You can create new commands by using python function.
 
