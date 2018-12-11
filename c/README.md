@@ -61,7 +61,7 @@ or
 
 Run the program
 
-```
+```bash
 (lldb) breakpoint set -f hello.c -l 8
 Breakpoint 1: where = hello`main + 68 at hello.c:9, address = 0x0000000100000f14
 (lldb) run
