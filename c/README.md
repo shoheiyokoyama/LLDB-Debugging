@@ -61,9 +61,17 @@ or
 
 Run the program
 
-<p align="center">
-  <img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/CProgram/Assets/lldb-run.png" width="750">
-</p>
+```
+(lldb) breakpoint set -f hello.c -l 8
+Breakpoint 1: where = hello`main + 68 at hello.c:9, address = 0x0000000100000f14
+(lldb) run
+Process 35741 launched: '/path/LLDB-Debugging/c/hello' (x86_64)
+Hello World 
+Process 35741 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x0000000100000f14 hello`main(argc=1, argv=0x00007ffeefbffa78) at hello.c:9
+Target 0: (hello) stopped.
+```
 
 The set breakpoint interrupts execution and will give us an interactive prompt to mingle with the running proces. In this suspended state, it's possible to execute LLDB commands.
 
