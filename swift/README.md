@@ -77,7 +77,7 @@ As for more information concerning `xcrun`, `swiftc`, run help command.
 
 ```
 $ xcrun --help
-swiftc -help
+$ swiftc -help
 ```
 
 
