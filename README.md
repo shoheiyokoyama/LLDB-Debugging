@@ -13,7 +13,7 @@ LLDB is the default debugger in Xcode on Mac OS X and supports debugging C, Obje
 # Contents
 
 - [The REPL and Debugger in Swift](https://github.com/shoheiyokoyama/LLDB-Debugging/tree/master/swift#the-repl-and-debugger-in-swift)
-- [The LLDB Debugging in C program](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/CProgram#the-lldb-debugging-in-c-program)
+- [The LLDB Debugging in C program](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/c#the-lldb-debugging-in-c-program)
 - [The Debugging with Xcode and LLDB](https://github.com/shoheiyokoyama/LLDBDebugging/tree/master/DBug#the-debugging-with-xcode-and-lldb)
 - [The LLDB Debugger](#the-lldb-debugger)
   - [The LLDB command](#lldb-command)

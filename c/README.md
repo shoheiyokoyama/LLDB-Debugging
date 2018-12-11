@@ -1,6 +1,6 @@
 # The LLDB Debugging in C program
 
-## Compile c file
+## Compile C file
 
 To compile the file `hello.c` with gcc, use the following command:
 
@@ -11,7 +11,7 @@ $ gcc -o hello -g hello.c
 > NOTE: Add `-g` option to debug with LLDB
 
 
-## Debug c program with LLDB
+## Debug C program with LLDB
 
 ### Starting LLDB
 
