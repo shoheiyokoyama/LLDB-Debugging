@@ -1,6 +1,6 @@
 # The REPL and Debugger in Swift
 
-The LLDB debugger supports the Swift programming language & REPL. You can launch the LLVM debugger (LLDB) with swift compiler by using the xcrun command.
+The LLDB debugger supports the Swift programming language & REPL. You can launch the LLVM debugger (LLDB) with swift compiler by using the xcrun and swiftc commands.
 
 ### [REPL and Debugger](https://swift.org/lldb/#why-combine-the-repl-and-debugger)
 
