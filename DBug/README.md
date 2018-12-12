@@ -18,7 +18,7 @@
 - [Output view hierarchy](#output-view-hierarchy)
 - [Breakpoint](#breakpoint)
 - [Symbolic Breakpoint](#symbolic-breakpoint)
-- [The Debugging with python](#the-debugging-with-python)
+- [The Debugging with Python](#the-debugging-with-python)
 - [Requirements](#requirements)
 
 ## <a name="the-debugging-settings"> The Debugging settings
@@ -218,7 +218,7 @@ In this state, you can see the arguments passed to the function.
 Direction: Clockwise 🕐
 ```
 
-## <a name="the-debugging-with-python"> The Debugging with python
+## <a name="the-debugging-with-python"> The Debugging with Python
 
 <p align="center">
   <img src="https://github.com/shoheiyokoyama/LLDBDebugging/blob/master/DBug/Assets/chisel-sample.gif" width="800">
