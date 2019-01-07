@@ -73,7 +73,7 @@ Process 35741 stopped
 Target 0: (hello) stopped.
 ```
 
-The set breakpoint interrupts execution and will give us an interactive prompt to mingle with the running proces. In this suspended state, it's possible to execute LLDB commands.
+The set breakpoint interrupts execution and will give us an interactive prompt to mingle with the running process. In this suspended state, it's possible to execute LLDB commands.
 
 #### Step
 
